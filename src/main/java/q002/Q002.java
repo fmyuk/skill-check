@@ -1,5 +1,12 @@
 package q002;
 
+import java.util.Arrays;
+import java.util.List;
+import java.util.Map;
+import java.util.TreeMap;
+
+import static java.lang.Integer.parseInt;
+
 /**
  * Q002 並べ替える
  *
@@ -45,5 +52,15 @@ public class Q002 {
             "14,林",
             "9,清水"
     };
+
+    public void outData() {
+        List<String> list = Arrays.asList(dataList);
+        Map<Integer, String> map = new TreeMap<>();
+        for (String data : list) {
+            String[] d = data.split(",");
+            map.put(parseInt(d[0]), d[1]);
+        }
+        map.forEach((k, v) -> System.out.println(k + "," + v));
+    }
 }
-// 完成までの時間: xx時間 xx分
+// 完成までの時間: 00時間 15分
